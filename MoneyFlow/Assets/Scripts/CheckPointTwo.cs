@@ -11,7 +11,7 @@ public class CheckPointTwo : MonoBehaviour
     SpriteRenderer moneySprite;
     SpriteRenderer checkSpriteRenderer;
 
-    Sprite dollar;
+    
     [SerializeField] Sprite bills;
     [SerializeField] Sprite cheque;
     [SerializeField] Sprite chequera;
@@ -50,7 +50,6 @@ public class CheckPointTwo : MonoBehaviour
 
         moneySprite = Money.GetComponent<SpriteRenderer>();
         checkSpriteRenderer = GetComponent<SpriteRenderer>();
-        dollar = Money.GetComponent<SpriteRenderer>().sprite;
 
         endPointScript = EndPoint.GetComponent<EndPoint>();
 
