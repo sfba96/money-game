@@ -219,17 +219,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f97a390f3b34a09ab251ccae437a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bills: {fileID: 0}
-  cheque: {fileID: 0}
-  chequera: {fileID: 0}
-  credit: {fileID: 0}
-  coin: {fileID: 0}
-  euro: {fileID: 0}
-  atmGreen: {fileID: 0}
-  busGreen: {fileID: 0}
-  companyGreen: {fileID: 0}
-  parisGreen: {fileID: 0}
-  personGreen: {fileID: 0}
-  storeGreen: {fileID: 0}
-  tradingUpGreen: {fileID: 0}
-  tradingDownGreen: {fileID: 0}
+  bills: {fileID: 21300000, guid: a7b774e6e544c45ec9279c15252271d1, type: 3}
+  cheque: {fileID: 21300000, guid: b60e3f3a439dc42e693dc762f91c21f0, type: 3}
+  chequera: {fileID: 21300000, guid: 1aea30c9a86b24defb7b7d86645cc023, type: 3}
+  credit: {fileID: 21300000, guid: d14f6c802f4e743728441bbd999b4de4, type: 3}
+  coin: {fileID: 21300000, guid: e4cc51dcc1f984d33acb2db6f5b6c777, type: 3}
+  euro: {fileID: 21300000, guid: f232b6623f1cc47f69e96d7e9c0e622b, type: 3}
+  atmGreen: {fileID: 21300000, guid: e99f65fef87b44e9fb8dc49ea7e63f3e, type: 3}
+  busGreen: {fileID: 21300000, guid: c7e24b1de9cdd43a29490a8b9f588b18, type: 3}
+  companyGreen: {fileID: 21300000, guid: 040baee348563416495b9c36a1756358, type: 3}
+  parisGreen: {fileID: 21300000, guid: 484b37e7b21964871938f7d18820954a, type: 3}
+  personGreen: {fileID: 21300000, guid: 6c14ffa83067244f39e008fdfaa0183e, type: 3}
+  storeGreen: {fileID: 21300000, guid: f06b143dcfad84ee9b5641745fc01b62, type: 3}
+  tradingUpGreen: {fileID: 21300000, guid: 8e01aba485ea6404799e5027bf91c478, type: 3}
+  tradingDownGreen: {fileID: 21300000, guid: c551d9b196d0b46fa93a047c9b3ebbc3, type: 3}

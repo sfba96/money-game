@@ -92,12 +92,12 @@ public class CheckPoints : MonoBehaviour
                     checkSpriteRenderer.sprite = storeGreen;
                     endPointScript.pointsCounter++;
                     break;
-                case "tradingUp":
+                case "tradeUp":
                     moneySprite.sprite = bills;
                     checkSpriteRenderer.sprite = tradingUpGreen;
                     endPointScript.pointsCounter++;
                     break;
-                case "tradingDown":
+                case "tradeDown":
                     moneySprite.sprite = coin;
                     checkSpriteRenderer.sprite = tradingDownGreen;
                     endPointScript.pointsCounter++;
