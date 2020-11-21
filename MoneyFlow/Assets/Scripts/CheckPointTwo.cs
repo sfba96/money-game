@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.PostProcessing;
+
 
 public class CheckPointTwo : MonoBehaviour
 {
@@ -10,7 +13,10 @@ public class CheckPointTwo : MonoBehaviour
     GameObject camera;
     VideoPlayer colors;
     EndPoint endPointScript;
-    
+    GameObject Post;
+    PostProcessVolume volume;
+    DepthOfField depthLayer = null;
+    LensDistortion lensLayer = null;
 
     SpriteRenderer moneySprite;
     SpriteRenderer checkSpriteRenderer;
@@ -57,6 +63,12 @@ public class CheckPointTwo : MonoBehaviour
         Money = GameObject.Find("Money");
         EndPoint = GameObject.Find("EndPoint");
         camera = GameObject.Find("Video Player");
+        Post = GameObject.Find("PostProcessingGO");
+        volume = Post.GetComponent<PostProcessVolume>();
+        volume.profile.TryGetSettings(out depthLayer);
+        volume.profile.TryGetSettings(out lensLayer);
+
+
 
         moneySprite = Money.GetComponent<SpriteRenderer>();
         checkSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -86,6 +98,7 @@ public class CheckPointTwo : MonoBehaviour
                 case "alcohol":
                     moneySprite.sprite = credit;
                     checkSpriteRenderer.sprite = alcoholGreen;
+                    depthLayer.enabled.value = true;
                     endPointScript.pointsCounter++;
                     break;
                 case "china":
@@ -105,6 +118,8 @@ public class CheckPointTwo : MonoBehaviour
                     break;
                 case "factory":
                     colors.Stop();
+                    StartCoroutine("FadeBoardBack");
+                    depthLayer.enabled.value = false;
                     moneySprite.sprite = bag;
                     checkSpriteRenderer.sprite = factoryGreen;
                     endPointScript.pointsCounter++;
@@ -135,6 +150,7 @@ public class CheckPointTwo : MonoBehaviour
                     endPointScript.pointsCounter++;
                     break;
                 case "marijuana":
+                    StartCoroutine("FadeBoard");
                     moneySprite.sprite = cheque;
                     checkSpriteRenderer.sprite = marijuanaGreen;
                     endPointScript.pointsCounter++;
@@ -159,6 +175,29 @@ public class CheckPointTwo : MonoBehaviour
                     moneySprite.sprite = moneySprite.sprite;
                     break;
             }
+        }
+    }
+
+    IEnumerator FadeBoard()
+    {
+        lensLayer.enabled.value = true;
+
+        for (float i = 0; i >= -73; i -= 0.1f)
+        {
+            // set color with i as alpha
+            lensLayer.intensity.value = i;
+            yield return null;
+        }
+    }
+
+    IEnumerator FadeBoardBack()
+    {
+
+        for (float i = -73; i <= 0; i += 0.5f)
+        {
+            // set color with i as alpha
+            lensLayer.intensity.value = i;
+            yield return null;
         }
     }
 }
