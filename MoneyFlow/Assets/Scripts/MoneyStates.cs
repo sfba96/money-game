@@ -7,10 +7,13 @@ public class MoneyStates : MonoBehaviour
     [Min(0)] public float DelayBeforeFade = 3;
     [Min(0.01f)] public float FadeDuration = 5;
     [SerializeField] AudioSource checkPoint;
+    [SerializeField] GameObject message;
     MoneyMovement moneyMovement;
     SpriteRenderer moneySprite;
     public float alpha;
     private float delay;
+    public bool cont = false;
+    public bool movementAllowed = true;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,8 @@ public class MoneyStates : MonoBehaviour
     {
 
         Devalue();
+
+        
 
     }
 
@@ -46,7 +51,20 @@ public class MoneyStates : MonoBehaviour
         {
             delay -= Time.deltaTime;
         }
+
         moneySprite.color = new Color(moneySprite.color.r, moneySprite.color.g, moneySprite.color.b, alpha);
+
+        if (alpha == 0 && cont == false)
+        {
+            message.SetActive(true);
+            movementAllowed = false;
+        } else if (cont == true)
+        {
+            message.SetActive(false);
+            alpha = 1f;
+            movementAllowed = true;
+            cont = false;
+        }
     }
 
     
@@ -57,6 +75,12 @@ public class MoneyStates : MonoBehaviour
         {
             checkPoint.Play(0);
         }
+    }
+
+    public void Continue()
+    {
+        cont = true;
+
     }
 
 }

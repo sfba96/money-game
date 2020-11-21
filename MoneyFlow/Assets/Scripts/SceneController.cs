@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -29,4 +30,5 @@ public class SceneController : MonoBehaviour
             LoadNextScene();
         }
     }
+ 
 }

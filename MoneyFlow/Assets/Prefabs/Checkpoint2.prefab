@@ -220,17 +220,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bills: {fileID: 21300000, guid: a7b774e6e544c45ec9279c15252271d1, type: 3}
+  bullets: {fileID: 21300000, guid: 5ac9e199303bc40408f6d22f895e82fb, type: 3}
   cheque: {fileID: 21300000, guid: b60e3f3a439dc42e693dc762f91c21f0, type: 3}
   chequera: {fileID: 21300000, guid: 1aea30c9a86b24defb7b7d86645cc023, type: 3}
   credit: {fileID: 21300000, guid: d14f6c802f4e743728441bbd999b4de4, type: 3}
   coin: {fileID: 21300000, guid: e4cc51dcc1f984d33acb2db6f5b6c777, type: 3}
+  dollar: {fileID: 21300000, guid: cdfc95817e1c4428895de650c330faf4, type: 3}
   euro: {fileID: 21300000, guid: f232b6623f1cc47f69e96d7e9c0e622b, type: 3}
   yen: {fileID: 21300000, guid: 7ea0c59c2f298418c9760ec4128c1331, type: 3}
   pound: {fileID: 21300000, guid: 213dfb020ef634f0da3eacf920e275ef, type: 3}
   time: {fileID: 21300000, guid: da8fbc64e25d543ee87dc7f1173112d6, type: 3}
   groceries: {fileID: 21300000, guid: fd0de56faf6c549f287e329a890c2b68, type: 3}
+  bloodCoin: {fileID: 21300000, guid: 8f29e89ca6e324600a2cc093b61c76ca, type: 3}
+  bag: {fileID: 21300000, guid: 5bc49a2a4bcb445a3b4239a8219a67f6, type: 3}
+  change: {fileID: 21300000, guid: de84cbb37b78e41469da7a90079fa493, type: 3}
   alcoholGreen: {fileID: 21300000, guid: 11051299dc15c4d449545845854a8042, type: 3}
   chinaGreen: {fileID: 21300000, guid: 2d02b60a2efc34aa49c990833b12c1b2, type: 3}
+  clockGreen: {fileID: 21300000, guid: ea61c494300b648aea6f8e3783f4f697, type: 3}
   deadGreen: {fileID: 21300000, guid: 5aa608bd657684cd0b1f0de51389b1c3, type: 3}
   factoryGreen: {fileID: 21300000, guid: 9486daefcf9464a3e8468cafd5fc95d9, type: 3}
   farmGreen: {fileID: 21300000, guid: d70057584097844dab5d64086efb8dba, type: 3}

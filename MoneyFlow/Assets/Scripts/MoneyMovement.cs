@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoneyMovement : MonoBehaviour
 {
     [SerializeField] float speed;
+    MoneyStates moneyStates;
     Rigidbody2D moneyRigidBody;
     SpriteRenderer moneySprite;
     public bool isMoving = false;
@@ -14,12 +15,15 @@ public class MoneyMovement : MonoBehaviour
     {
         moneyRigidBody = GetComponent<Rigidbody2D>();
         moneySprite = GetComponent<SpriteRenderer>();
+        moneyStates = GetComponent<MoneyStates>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move(); 
+        if (moneyStates.movementAllowed) { 
+            Move();
+        }
     }
 
     private void Move()
@@ -50,9 +54,23 @@ public class MoneyMovement : MonoBehaviour
         } else if(moneySprite.sprite.name == "coin")
         {
             speed = 1;
-        } else
+        }
+        else if (moneySprite.sprite.name == "yen")
+        {
+            speed = 5;
+        }
+        else if (moneySprite.sprite.name == "pound")
+        {
+            speed = 3;
+        }
+        else if (moneySprite.sprite.name == "bloodCoin")
+        {
+            speed = 2;
+        }
+        else
         {
             speed = 4;
         }
     }
+
 }
