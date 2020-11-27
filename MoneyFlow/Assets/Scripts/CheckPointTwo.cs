@@ -36,6 +36,7 @@ public class CheckPointTwo : MonoBehaviour
     [SerializeField] Sprite bloodCoin;
     [SerializeField] Sprite bag;
     [SerializeField] Sprite change;
+    [SerializeField] Sprite rustyDollar;
 
 
     [SerializeField] Sprite alcoholGreen;
@@ -55,7 +56,14 @@ public class CheckPointTwo : MonoBehaviour
 
     string spriteName;
 
+    private void Awake()
+    {
+        Post = GameObject.Find("PostProcessingGO");
+        volume = Post.GetComponent<PostProcessVolume>();
+        volume.profile.TryGetSettings(out depthLayer);
+        volume.profile.TryGetSettings(out lensLayer);
 
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -63,11 +71,6 @@ public class CheckPointTwo : MonoBehaviour
         Money = GameObject.Find("Money");
         EndPoint = GameObject.Find("EndPoint");
         camera = GameObject.Find("Video Player");
-        Post = GameObject.Find("PostProcessingGO");
-        volume = Post.GetComponent<PostProcessVolume>();
-        volume.profile.TryGetSettings(out depthLayer);
-        volume.profile.TryGetSettings(out lensLayer);
-
 
 
         moneySprite = Money.GetComponent<SpriteRenderer>();
@@ -107,7 +110,7 @@ public class CheckPointTwo : MonoBehaviour
                     endPointScript.pointsCounter++;
                     break;
                 case "clock":
-                    moneySprite.sprite = coin;
+                    moneySprite.sprite = rustyDollar;
                     checkSpriteRenderer.sprite = clockGreen;
                     endPointScript.pointsCounter++;
                     break;
@@ -182,7 +185,7 @@ public class CheckPointTwo : MonoBehaviour
     {
         lensLayer.enabled.value = true;
 
-        for (float i = 0; i >= -73; i -= 0.1f)
+        for (float i = 0; i >= -73; i -= 0.4f)
         {
             // set color with i as alpha
             lensLayer.intensity.value = i;

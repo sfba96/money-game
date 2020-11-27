@@ -234,6 +234,7 @@ MonoBehaviour:
   bloodCoin: {fileID: 21300000, guid: 8f29e89ca6e324600a2cc093b61c76ca, type: 3}
   bag: {fileID: 21300000, guid: 5bc49a2a4bcb445a3b4239a8219a67f6, type: 3}
   change: {fileID: 21300000, guid: de84cbb37b78e41469da7a90079fa493, type: 3}
+  rustyDollar: {fileID: 21300000, guid: 4332e333b13b5471296a4d1fdc6ab9b8, type: 3}
   alcoholGreen: {fileID: 21300000, guid: 11051299dc15c4d449545845854a8042, type: 3}
   chinaGreen: {fileID: 21300000, guid: 2d02b60a2efc34aa49c990833b12c1b2, type: 3}
   clockGreen: {fileID: 21300000, guid: ea61c494300b648aea6f8e3783f4f697, type: 3}

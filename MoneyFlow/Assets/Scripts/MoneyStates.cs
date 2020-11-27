@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MoneyStates : MonoBehaviour
 {
@@ -22,17 +24,12 @@ public class MoneyStates : MonoBehaviour
         moneySprite = GetComponent<SpriteRenderer>();
         alpha = moneySprite.color.a;
         delay = DelayBeforeFade;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
         Devalue();
-
-        
-
     }
 
     void Devalue()
@@ -82,5 +79,12 @@ public class MoneyStates : MonoBehaviour
         cont = true;
 
     }
+
+    public void Stop()
+    {
+        message.SetActive(false);
+        SceneManager.LoadScene(1);
+    }
+
 
 }

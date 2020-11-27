@@ -18,16 +18,20 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
     public void OnTriggerEnter2D(Collider2D other)
     {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
         if (other.tag == "Money")
         {
-            LoadNextScene();
+            if (currentSceneIndex == 1)
+            {
+                LoadNextScene();
+            } else
+            {
+                SceneManager.LoadScene(1);
+            }
+            
         }
     }
  
